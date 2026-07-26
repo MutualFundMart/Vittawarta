@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vittawarta</title>
+  
+  <!-- Pulls in the required background scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="dflip/css/dflip.min.css" rel="stylesheet" type="text/css">
+  <link href="dflip/css/themify-icons.min.css" rel="stylesheet" type="text/css">
+  
+  <!-- Makes the magazine fill your whole screen -->
+  <style>
+    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+    #flipbook { height: 100vh; width: 100vw; }
+  </style>
+</head>
+<body>
+  
+  <!-- The blank canvas where the magazine will appear -->
+  <div id="flipbook"></div>
+  
+  <script src="dflip/js/dflip.min.js"></script>
+  <script>
+    // This tells the page to load "magazine.pdf" when someone visits
+    $(document).ready(function () {
+      $("#flipbook").flipBook("magazine.pdf", { 
+        webgl: true, // Enables smooth 3D effects
+        backgroundColor: "#222222" // A nice dark background
+      });
+    });
+  </script>
+</body>
+</html>
